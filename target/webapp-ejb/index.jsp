@@ -7,6 +7,7 @@
 <body>
 <h2>Hola mundo ejb!</h2>
 <h3>${saludo}</h3>
+<h3>${saludo2}</h3>
 
 </body>
 </html>
