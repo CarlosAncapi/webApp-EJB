@@ -1,0 +1,3 @@
+org\cancapi\webapp\ejb\service\ServiceEJB.class
+org\cancapi\webapp\ejb\Main.class
+org\cancapi\webapp\ejb\controllers\EjemploServlet.class
