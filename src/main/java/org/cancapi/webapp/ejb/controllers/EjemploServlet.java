@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.cancapi.webapp.ejb.models.Producto;
 import org.cancapi.webapp.ejb.service.ServiceEJB;
 import org.cancapi.webapp.ejb.service.ServiceEJBLocal;
 
@@ -38,10 +39,14 @@ public class EjemploServlet extends HttpServlet {
         } catch (NamingException e){
             e.printStackTrace();
         }
-
         System.out.println("service si es igual a service2 = " + service.equals(service2) );
+
+        Producto p = service.crear(new Producto("uvas"));
+        System.out.println("nuevo producto: "+p);
+
         req.setAttribute("saludo", service.saludar("Andres"));
         req.setAttribute("saludo2", service2.saludar("Jhon"));
+        req.setAttribute("listado",service.listar());
         getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 }

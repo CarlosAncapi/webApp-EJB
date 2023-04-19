@@ -1,3 +1,4 @@
+org\cancapi\webapp\ejb\models\Producto.class
 org\cancapi\webapp\ejb\service\ServiceEJBLocal.class
 org\cancapi\webapp\ejb\service\ServiceEJB.class
 org\cancapi\webapp\ejb\Main.class
