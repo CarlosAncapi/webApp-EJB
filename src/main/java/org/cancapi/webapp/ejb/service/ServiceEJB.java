@@ -1,12 +1,10 @@
 package org.cancapi.webapp.ejb.service;
 
-import jakarta.ejb.Stateful;
 import jakarta.ejb.Stateless;
-import jakarta.enterprise.context.RequestScoped;
 
-@RequestScoped
-@Stateful
-public class ServiceEJB {
+//@RequestScoped
+@Stateless
+public class ServiceEJB implements ServiceEJBLocal {
 
     private int contador;
 

@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.cancapi.webapp.ejb.service.ServiceEJB;
+import org.cancapi.webapp.ejb.service.ServiceEJBLocal;
 
 
 import javax.naming.InitialContext;
@@ -19,21 +20,21 @@ import java.io.IOException;
 public class EjemploServlet extends HttpServlet {
 
     //@Inject
-    //private ServiceEJB service;
+    //private ServiceEJBLocal service;
 
     //@Inject
-    //private ServiceEJB service2;
+    //private ServiceEJBLocal service2;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        ServiceEJB service = null;
-        ServiceEJB service2 = null;
+        ServiceEJBLocal service = null;
+        ServiceEJBLocal service2 = null;
 
         try {
             InitialContext ctx = new InitialContext();
-            service = (ServiceEJB) ctx.lookup("java:global/webapp-ejb/ServiceEJB!org.cancapi.webapp.ejb.service.ServiceEJB");
-            service2 = (ServiceEJB) ctx.lookup("java:global/webapp-ejb/ServiceEJB!org.cancapi.webapp.ejb.service.ServiceEJB");
+            service = (ServiceEJBLocal) ctx.lookup("java:global/webapp-ejb/ServiceEJB!org.cancapi.webapp.ejb.service.ServiceEJBLocal");
+            service2 = (ServiceEJBLocal) ctx.lookup("java:global/webapp-ejb/ServiceEJB!org.cancapi.webapp.ejb.service.ServiceEJBLocal");
         } catch (NamingException e){
             e.printStackTrace();
         }
